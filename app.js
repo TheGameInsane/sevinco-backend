@@ -9,7 +9,6 @@ const session = require('express-session')
 const discordStrat = require('./strategies/discord')
 const MongoStore = require('connect-mongo')
 const cors = require('cors')
-const cookieParser = require('cookie-parser')
 
 try {
     mongoose.connect(process.env.MONGO_URI, {
@@ -21,8 +20,6 @@ try {
     console.log('Error occured while connecting to Database.')
 }
 
-app.use(cookieParser())
-
 app.use(cors({
     origin: ['http://localhost:3000'],
     credentials: true,
@@ -31,7 +28,8 @@ app.use(cors({
 app.use(session({
     secret: 'SECRETS',
     cookie: {
-        maxAge: 60000 * 60 * 24
+        maxAge: 60000 * 60 * 24,
+        sameSite: "false"
     },
     resave: false,
     saveUninitialized: false,
