@@ -6,7 +6,7 @@ router.get('/discord', passport.authenticate('discord'))
 router.get('/discord/redirect', passport.authenticate('discord', {
     failureRedirect: '/forbidden'
 }), (req, res) => {
-    res.send(req.user)
+    res.redirect("https://sevinco.herokuapp.com/")
 })
 
 router.get('/', (req, res) => {
