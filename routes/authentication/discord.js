@@ -1,7 +1,7 @@
-const getBotGuilds = require('../utils/api')
-const User = require('../schemas/user')
+const getBotGuilds = require('../../utils/api')
+const User = require('../../schemas/user')
 const router = require('express').Router()
-const { getMutualGuilds } = require('../utils/utils')
+const { getMutualGuilds } = require('../../utils/utils')
 
 router.get('/guilds', async (req, res) => {
     const guilds = await getBotGuilds()

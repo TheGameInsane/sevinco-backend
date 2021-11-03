@@ -1,6 +1,6 @@
-const routes = require('./auth')
+const routes = require('./authentication/auth')
 const router = require('express').Router()
-const discordRoutes = require('./discord')
+const discordRoutes = require('./authentication/discord')
 
 router.use('/auth', routes)
 router.use('/discord', discordRoutes)
