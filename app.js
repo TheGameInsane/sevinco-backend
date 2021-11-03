@@ -29,7 +29,7 @@ app.use(session({
     secret: 'SECRETS',
     cookie: {
         maxAge: 60000 * 60 * 24,
-        sameSite: "false"
+        sameSite: "none"
     },
     resave: false,
     saveUninitialized: false,
