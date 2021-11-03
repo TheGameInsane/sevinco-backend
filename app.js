@@ -9,6 +9,7 @@ const session = require('express-session')
 const discordStrat = require('./strategies/discord')
 const MongoStore = require('connect-mongo')
 const cors = require('cors')
+const cookieParser = require('cookie-parser')
 
 try {
     mongoose.connect(process.env.MONGO_URI, {
