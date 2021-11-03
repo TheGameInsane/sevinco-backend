@@ -22,12 +22,12 @@ try {
 }
 
 app.use(cors({
-    origin: ['http://localhost:3001'],
+    origin: ['http://localhost:3000', 'https://sevinco.herokuapp.com'],
     credentials: true,
 }))
 
 app.use(session({
-    secret: 'SECRETS',
+    secret: 'theDevIsVinayLonpande',
     cookie: {
         maxAge: 60000 * 60 * 24
     },
