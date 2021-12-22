@@ -21,6 +21,7 @@ router.get('/', async (req, res) => {
             avatar,
             guilds
         }, {new: true}).then(res.send(req.user))
+        
     } else {
         res.sendStatus(401)
     }
