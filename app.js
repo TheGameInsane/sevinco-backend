@@ -35,7 +35,9 @@ try {
 }
 
 app.use(cors({
-    origin: ['http://localhost:3000', 'https://sevinco.herokuapp.com'],
+    origin: [
+        // 'http://localhost:3000',
+        'https://sevinco.herokuapp.com'],
     credentials: true,
 }))
 
@@ -60,6 +62,12 @@ app.use(express.urlencoded({
 app.use(express.json());
 
 app.use('/api', routes)
+
+app.get('/forbidden', (req, res) => {
+    // res.redirect('http://localhost:3000/menu')
+    res.redirect('https://sevinco.herokuapp.com/menu')
+})
+
 
 app.use(express.static(path.join(__dirname, 'build')))
 

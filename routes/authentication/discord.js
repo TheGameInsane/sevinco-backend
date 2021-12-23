@@ -31,8 +31,6 @@ router.get('/prefix', async (req, res) => {
         const collection = db.collection('wokcommands-prefixes')
         let col = await collection.find({}).toArray()
 
-        console.log('Data Sent')
-
         res.send(col)
     } catch (error) {
         console.log(error)
